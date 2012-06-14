@@ -1,0 +1,58 @@
+<job>
+<script language="javascript" src="format_js.js"></script>
+<script language="javascript">
+var getargs = function() {
+    var line,
+        input = [],
+        emptyCount = 0,
+        i;
+
+    var stdIn = WScript.stdIn,
+        stdOut = WScript.stdOut;
+
+    while (!stdIn.atEndofStream) {
+        line = stdIn.readLine();
+        input.push(line);
+    }
+
+    var s = input.join("\n");
+    var index = s.indexOf('|');
+    var plugin = s.slice(0, index);
+    var text = s.slice(index + 1);
+
+    return {plugin:plugin, text:text};
+};
+
+var echo = function(msg){
+    WScript.echo('echo|' + msg);
+};
+
+var echoerr = function(msg){
+    WScript.echo('echoerr|' + msg);
+};
+
+var replace = function(msg){
+    WScript.echo('replace|' + msg);
+};
+
+var main = function(){
+    var data = getargs();    
+    var plugin = data.plugin;
+    var text = data.text;
+    var method;
+    try{
+        method = eval(plugin);    
+    }catch(e){
+        echoerr('error:' + e.message);    
+        return;
+    }
+    if(typeof method === 'undefined'){
+        echoerr(plugin + ' is not defined.');
+        return;
+    }
+    method(text);
+};
+main();
+</script>
+</job>
+
