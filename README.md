@@ -3,7 +3,7 @@
 ## 需要安装的软件
 
     git
-    exuberant-ctags (linux下,windows不需要)
+    exuberant-ctags (linux下需要安装,windows不需要)
 
 ## windows gvim
 
