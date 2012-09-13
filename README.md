@@ -1,5 +1,10 @@
 # wifeng vimfiles
 
+## 需要安装的软件
+
+    git
+    exuberant-ctags (linux下,windows不需要)
+
 ## windows gvim
 
 * 将代码检出到gvim安装目录下
