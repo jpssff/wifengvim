@@ -9,6 +9,7 @@ Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'https://github.com/honza/vim-snippets'
+Plug 'https://github.com/becaning/vimdoccn'
 
 " Initialize plugin system
 call plug#end()
