@@ -10,6 +10,7 @@ Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'https://github.com/honza/vim-snippets'
 Plug 'https://github.com/becaning/vimdoccn'
+Plug 'https://github.com/xuhdev/SingleCompile'
 
 " Initialize plugin system
 call plug#end()
@@ -91,28 +92,8 @@ map <leader>l :so $VIMRUNTIME/macros/less.vim<CR>
 
 """""""""" GUI设置 """"""""""""
 if has('gui_running')
-    let g:vimrc_font_height = 10.15
-    function! s:ResizeFontSize(flag)
-        if a:flag == 1
-            let g:vimrc_font_height += 1
-        elseif a:flag == 0
-            let g:vimrc_font_height = 11.15
-        elseif a:flag == -1
-            let g:vimrc_font_height -= 1
-        endif
-        exec "set guifont=Consolas:h" . string(g:vimrc_font_height)
-    endfunction
-    call s:ResizeFontSize(0)
-
 	"最大化
 	au GUIEnter * simalt ~x
-    
-    "修改字体大小
-    map <C-F5> :call <SID>ResizeFontSize(-1)<CR>
-    map <C-F6> :call <SID>ResizeFontSize(0)<CR>
-    map <C-F7> :call <SID>ResizeFontSize(0)<CR>
-    map <C-F8> :call <SID>ResizeFontSize(1)<CR>
-    
     "只出现右边的滚动条即可
 	set guioptions=cr
 else
