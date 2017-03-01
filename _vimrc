@@ -1,15 +1,23 @@
 " 配置插件目录
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/pangloss/vim-javascript'
-Plug 'https://github.com/vim-scripts/Align'
-Plug 'https://github.com/editorconfig/editorconfig-vim'
-Plug 'https://github.com/scrooloose/nerdcommenter'
-Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/kien/ctrlp.vim'
-Plug 'https://github.com/honza/vim-snippets'
+Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
 Plug 'https://github.com/becaning/vimdoccn'
+Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'https://github.com/editorconfig/editorconfig-vim'
+Plug 'https://github.com/garbas/vim-snipmate'
+Plug 'https://github.com/honza/vim-snippets'
+Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'https://github.com/majutsushi/tagbar'
+Plug 'https://github.com/mattn/emmet-vim'
+Plug 'https://github.com/mileszs/ack.vim'
+Plug 'https://github.com/pangloss/vim-javascript'
+Plug 'https://github.com/scrooloose/nerdcommenter'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/scrooloose/syntastic'
+Plug 'https://github.com/tomtom/tlib_vim.git'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/vim-scripts/Align'
 Plug 'https://github.com/xuhdev/SingleCompile'
 
 " Initialize plugin system
@@ -90,10 +98,12 @@ map <leader>cp gg"*yG<C-O><C-O>
 "模拟less查看
 map <leader>l :so $VIMRUNTIME/macros/less.vim<CR>
 
+map <space> <C-F>
+
 """""""""" GUI设置 """"""""""""
 if has('gui_running')
 	"最大化
-	au GUIEnter * simalt ~x
+	"au GUIEnter * simalt ~x
     "只出现右边的滚动条即可
 	set guioptions=cr
 else
