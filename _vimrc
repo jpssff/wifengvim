@@ -1,6 +1,7 @@
 " 配置插件目录
 call plug#begin('~/.vim/plugged')
 
+Plug 'https://github.com/t9md/vim-choosewin'
 Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
 Plug 'https://github.com/becaning/vimdoccn'
 Plug 'https://github.com/easymotion/vim-easymotion'
@@ -19,6 +20,9 @@ Plug 'https://github.com/tomtom/tlib_vim.git'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/vim-scripts/Align'
 Plug 'https://github.com/xuhdev/SingleCompile'
+
+"let g:choosewin_overlay_enable = 1
+nmap - <Plug>(choosewin)
 
 " Initialize plugin system
 call plug#end()
@@ -91,14 +95,17 @@ map <F12> :e $myvimrc<CR>
 map <leader>cd :cd %:h<CR>:pwd<CR>
 
 "系统粘贴板
-map <leader>p "*P
-map <leader>x "*x
+map <leader>p  "*P
+map <leader>x  "*x
 map <leader>cp gg"*yG<C-O><C-O>
 
 "模拟less查看
 map <leader>l :so $VIMRUNTIME/macros/less.vim<CR>
 
-map <space> <C-F>
+nmap <space><space> <C-F>
+nmap <space><tab>   :b#<CR>
+nmap <space>fr      :CtrlPMRUFiles<CR>
+nmap <space>bb      :CtrlPBuffer<CR>
 
 """""""""" GUI设置 """"""""""""
 if has('gui_running')
