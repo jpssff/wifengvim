@@ -39,11 +39,11 @@ let LC_CTYTPE = expand('$LC_CTYTPE')
 "设置语言，供vim使用
 let $LANG="zh_CN.UTF-8"
 "一般终端编码和系统编码保持一致
-if LANGUAGE =~? 'UTF' || LC_CTYTPE =~? 'UTF'
-    set termencoding=utf-8
-else
-    set termencoding=cp936
-endif
+"if LANGUAGE =~? 'UTF' || LC_CTYTPE =~? 'UTF'
+"    set termencoding=utf-8
+"else
+"    set termencoding=cp936
+"endif
 
 "通用的一些样式
 sy on
