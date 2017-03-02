@@ -1,6 +1,7 @@
 " 配置插件目录
 call plug#begin('~/.vim/plugged')
 
+Plug 'https://github.com/vim-scripts/ctrlp-funky'
 Plug 'https://github.com/t9md/vim-choosewin'
 Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
 Plug 'https://github.com/becaning/vimdoccn'
@@ -104,8 +105,16 @@ map <leader>l :so $VIMRUNTIME/macros/less.vim<CR>
 
 nmap <space><space> <C-F>
 nmap <space><tab>   :b#<CR>
+nmap <space>cd      :cd %:h<CR>:pwd<CR>
 nmap <space>fr      :CtrlPMRUFiles<CR>
+nmap <space>ff      :CtrlP<CR>
+nmap <space>ft      :NERDTreeToggle<CR>
+nmap <space>fs      :w<CR>
 nmap <space>bb      :CtrlPBuffer<CR>
+nmap <space>qq      :q<CR>
+nmap <space>ss      :CtrlPLine<CR>
+nmap <space>sj      :CtrlPFunky<CR>
+nmap <space>sJ      :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 """""""""" GUI设置 """"""""""""
 if has('gui_running')
