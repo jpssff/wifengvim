@@ -106,12 +106,13 @@ map <leader>l :so $VIMRUNTIME/macros/less.vim<CR>
 
 nmap <space><space> <C-F>
 nmap <space><tab>   :b#<CR>
+nmap <space>.       :A<CR>
 nmap <space>cd      :cd %:h<CR>:pwd<CR>
 nmap <space>qq      :q<CR>
 
 nmap <space>fr      :CtrlPMRUFiles<CR>
 nmap <space>ff      :CtrlP<CR>
-nmap <space>fed      :e $myvimrc<CR>
+nmap <space>fed      :e $MYVIMRC<CR>
 nmap <space>ft      :NERDTreeToggle<CR>
 nmap <space>fs      :w<CR>
 
