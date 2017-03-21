@@ -89,6 +89,13 @@ autocmd BufNewFile,BufRead *.txt,*.text,*.data set noexpandtab
 "markdown语法文档
 au BufRead,BufNewFile *.mkd,*.markdown,*.mdwn,*.text set filetype=mkd
 
+" Keep search pattern at the center of the screen
+nmap <silent> n nzz
+nmap <silent> N Nzz
+nmap <silent> * *zz
+nmap <silent> # #zz
+nmap <silent> g* g*zz
+nmap <silent> g# g#zz
 
 "<F12>快速编辑.vimrc
 map <F12> :e $myvimrc<CR>
@@ -125,8 +132,18 @@ nmap <space>bb      :CtrlPBuffer<CR>
 nmap <space>bd      :bd<CR>
 
 """""""""" 编译部分 """"""""""""
-autocmd Filetype c,cpp nmap <buffer> <space>cc :SCCompileAF -I/usr/local/include -L/usr/local/lib
-autocmd Filetype c,cpp nmap <buffer> <space>cr :SCCompileRunAF -I/usr/local/include -L/usr/local/lib
+let g:SingleCompile_showquickfixiferror = 1
+function! <SID>SCCompile_(cmd)
+    let line = getline(1)
+    let flag = ''
+    let idx = stridx(line, 'FLAGS:')
+    if idx != -1
+        let flag = strpart(line, idx + 6)
+    endif
+    execute a:cmd . ' -I/usr/local/include -L/usr/local/lib ' . flag
+endfunction
+autocmd Filetype c,cpp nmap <buffer> <space>cc :call <SID>SCCompile_('SCCompileAF')<CR>
+autocmd Filetype c,cpp nmap <buffer> <space>cr :call <SID>SCCompile_('SCCompileRunAF')<CR>
 
 """""""""" GUI设置 """"""""""""
 if has('gui_running')
