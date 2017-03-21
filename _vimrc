@@ -106,6 +106,7 @@ map <leader>l :so $VIMRUNTIME/macros/less.vim<CR>
 
 nmap <space><space> <C-F>
 nmap <space><tab>   :b#<CR>
+nmap <space>/       :Ack<space>
 nmap <space>.       :A<CR>
 nmap <space>cd      :cd %:h<CR>:pwd<CR>
 nmap <space>qq      :q<CR>
@@ -122,6 +123,10 @@ nmap <space>sJ      :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 nmap <space>bb      :CtrlPBuffer<CR>
 nmap <space>bd      :bd<CR>
+
+"""""""""" 编译部分 """"""""""""
+autocmd Filetype c,cpp nmap <buffer> <space>cc :SCCompileAF -I/usr/local/include -L/usr/local/lib
+autocmd Filetype c,cpp nmap <buffer> <space>cr :SCCompileRunAF -I/usr/local/include -L/usr/local/lib
 
 """""""""" GUI设置 """"""""""""
 if has('gui_running')
