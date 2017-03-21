@@ -48,7 +48,9 @@ let $LANG="zh_CN.UTF-8"
 
 "通用的一些样式
 sy on
-"colorscheme wf2
+colorscheme desert
+"高亮搜索
+set hlsearch
 set laststatus=2
 set nobk
 set statusline=%F\ [%{&fenc}\ %{&ff}\ L%l/%L\ C%c]\ %=%{strftime('%Y-%m-%d\ %H:%M')}
